@@ -1,0 +1,78 @@
+.header-carousel-item{
+    height:450px
+}
+body{
+  background-color: #F2E0C9;
+}
+/* 边线加粗 */
+.form-control{
+    border-width: 3px;
+}
+.bg-cover{
+    background-size: cover;
+    background-position: center center;
+}
+.carousel-caption{
+    background-color: rgba(0, 0,0, .6);
+}
+/* 比较大的装置使用深色字小装置白色字 */
+@media (min-width: 768px) {
+    .text-md-dark{
+        color: #333;
+    }
+}
+
+@media (max-width: 768px) {
+            .text-md-dark{
+                color: #FFFFFF;
+            }
+        }
+.jumbotron-bg{
+    background-image: url(../picture/奶茶2.png);
+    background-size: cover;
+    /* 背景图会尽量完整呈现 */
+    background-position:center center;
+    /* 背景图定义在中间 */
+    min-height: 400px;
+}
+
+.container{
+    width:1080px;
+    height:14px;
+}
+
+
+/* 
+.p1{
+    color:#F2E0C9;
+    line-height: 1.1em;
+} */
+
+.img-1{ 
+    width: 200px; 
+    height: auto; 
+    max-width: 100%; 
+    max-height: 100%; 
+    }
+
+
+
+
+.dropdown>button:focus{
+    box-shadow: 0 0 0 0rem !important;
+    }
+.box-shadow{
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .16);
+    /*0为水平移动 3px垂直 5px扩散 rgba(0, 0, 0, .16)*/
+    transition:box-shadow .3s;
+    }
+ .link-1 {
+        transition: 0.5s easse;
+    }
+      
+.link-1:hover {
+        border-top: 4px solid #dab595;
+        border-bottom: 4px solid #dab595;
+        padding: 10px 0; 
+    }
+      

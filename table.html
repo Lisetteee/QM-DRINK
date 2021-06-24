@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>QM饮品后台</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<!--颜色#efe0d9-->
+<body class="bg-light">
+    <!--使用了：bootstrap navbar的导航栏-->
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #efe0d9;">
+        <a class="navbar-brand" href="index.html" style="color: #7A5746;font-weight:bold ">QM饮品</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav d-flex mr-auto" >
+                <li class="nav-item active">
+                    <a class="nav-link link-1" href="index.html" style="color:black">首页 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link-1" href="shop.html" id="navbarDropdownMenuLink" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false" style="color:black">
+                    店铺 </a>
+                    <!--使用了：bootstrap dropdown-->
+                    <div class="dropdown-menu link-1" aria-labelledby="navbarDropdownMenuLink" >
+                        <a class="dropdown-item link-1" href="shop.html">猜你喜欢</a>
+                        <a class="dropdown-item link-1" href="shop.html">喜茶</a>
+                        <a class="dropdown-item link-1" href="shop.html">茶百道</a>
+                        <a class="dropdown-item link-1" href="shop.html">益禾堂</a>
+                        <a class="dropdown-item link-1" href="shop.html">奈雪的茶</a>
+                        <!-- <a class="dropdown-item" href="#">CoCo</a>
+                        <a class="dropdown-item" href="#">一点点</a> -->
+                    </div>
+                </li>
+                <li class="nav-item nav-link link-1" href="table.html" style="color:black">后台</li>
+            </ul>
+           <!--使用了：bootstrap form-inline-->
+           <form class="form-inline my-0 my-lg-0" >
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  >
+                <button class="btn btn-outline-secondary my-0 my-sm-0 mr-sm-2" type="submit">Search</button></div>
+                <!--使用modal-搜索modal-再搜live demo 将data-toggle=“model” data-target=“#exampleModel”贴上-->
+                <!--使用按钮取代原来的navbar-->
+                <div>
+                <a href="" class="btn btn-secondary" data-toggle="modal" data-target="#loginModal">登陆</a>
+                <a href="" class="btn btn-secondary" data-toggle="modal" data-target="#registerModal">注册</a>
+                </div>
+            </form>
+       </div>
+   </nav>
+
+   <!--使用card的数据显示-->
+   <div class="container-fluid mt-4 main ">
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!--在较大的空间用col-6 50%的宽 较小col-3_25%-->
+                <div class="card rounded-0 h-100">
+                    <!--rounded-0框的圆角变直角，用card把内容包起来-->
+                    <div class="card-body d-flex align-items-center">
+                        <!--align-items-center将框内文字垂直居中-->
+                        <div class="far fa-money-bill-alt fa-4x text-success mr-2 d-done d-sm-blk">
+                        </div>
+                        <div class="text-center w-100">
+                            <h5>今日营业</h5>
+                            <h3>640</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <!--在较大的空间用col-6 50%的宽 较小col-3_25%-->
+                <div class="card rounded-0 h-100">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="fas fa-user-friends fa-4x text-primary mr-2"> </div>
+                        <div class="text-center w-100">
+                            <h5>会员增加</h5>
+                            <h3 class="display-4">52人</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <!--在较大的空间用col-6 50%的宽 较小col-3_25%-->
+                <div class="card rounded-0 ">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="fas fa-id-card fa-4x text-primary mr-2"></div>
+                        <div class="text-center w-100">
+                            <h5>订单数</h5>
+                            <h3 class="display-4">45单</h3>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <!--在较大的空间用col-6 50%的宽 较小col-3_25%-->
+                <div class="card rounded-0">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="fas fa-box fa-4x text-primary mr-2 ">
+                        </div>
+                        <div class="text-center w-100">
+                            <h5>待出货数</h5>
+                            <h3 class="display-4">15件</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--使用card的上线人数和新进订单-->
+    <section class="container-fluid mt-4">
+        <div class="row mb-5">
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="text-center w-100">
+                            <h5>目前上线人数</h5>
+                            <h3 style="font-size:60px">66人</h3>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width:30%" aria-valuenow="30"
+                                    aria-valuemin="0" aria-valuemax="100">男性</div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width:70%" aria-valuenow="70"
+                                    aria-valuemin="0" aria-valuemax="100">女性</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card h-100">
+                    <div class="card-header bg-dark text-light" style="font-weight:bord;">
+                    新进订单
+                    <div>
+                    <div class="card-body">
+                        <div class="text-right">
+                            <a href="#" class="btn btn-outline-success">订单管理</a>
+                        <div>
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">货品</th>
+                                    <th scope="col">品牌</th>
+                                    <th scope="col">姓名</th>
+                                    <th scope="col" class="text-right pr-5">价格</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>豆乳玉麒麟</td>
+                                    <td>茶百道</td>
+                                    <td>小吃货</td>
+                                    <td class="text-right pr-5">17</td>
+                                </tr>
+                                <tr>
+                                    <td>益禾烤奶</td>
+                                    <td>益禾堂</td>
+                                    <td>木子</td>
+                                    <td class="text-right pr-5">10</td>
+                                </tr>
+                                <tr>
+                                    <td>芝士莓莓</td>
+                                    <td>喜茶</td>
+                                    <td>荷包蛋</td>
+                                    <td class="text-right pr-5">32</td>
+                                </tr>
+                                <tr>
+                                    <td>霸气芝士芒果</td>
+                                    <td>奈雪的茶</td>
+                                    <td>七居七居</td>
+                                    <td class="text-right pr-5">29</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text-right pr-5">总营收 88元</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    <div>
+                <div>
+            <div>
+        </div>
+    </section>
+
+    <!--使用input的搜索按钮-->
+    <div class="container-fluid mt-3 main">
+        <div class="row mb-2">
+            <div class="con-md-2">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-sm" placeholder="Recipient's username" 
+                        aria-label="Recipient's username" aria-describedby="basic-addon2" data-toggle="tooltip"
+                        data-placement="top" title="按一下快速搜索">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-9 text-right my-lg-0" style="margin-left: 50px;">
+                <button type="button" class="btn btn-success" data-target="#editModal" data-toggle="modal"
+                    data-title="快速下单">
+                <i class="fas fa-shopping-cart mr-2"></i>快速下单
+                </button>
+            </div> -->
+        </div>
+    </div>
+
+    <!--使用table的客户的下单信息-->
+    <table class="table ">
+        <thead>
+            <tr>
+                <th width="10">序号</th>
+                <th width="120">货品</th>
+                <th width="120">姓名</th>
+                <th width="200">Email</th>
+                <th width="120">状态</th>
+                <th width="120" class="text-right">金额</th>
+                <th width="150" class="text-center">操作</th>
+            </tr>
+        </thead>
+        <tbody><!--栏位颜色tables里面contextual classes-->
+            <tr >
+                <th scope="row">1</th>
+                <td style="font-weight: bold;">豆乳玉麒麟</td>
+                <td >小吃货	<span class="badger badge-pill badge-success">新客户</span></td>
+                <td >xiaochihuo@gmail.com</td>
+                <td >已出货</td>
+                <td class="text-right">17</td>
+                <td class="text-center">
+                    <!--button group-basic example 按钮群-->
+                    <!--btn-group-sm调整按钮大小-->
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary btn-secondary" data-toggle="modal"
+                            data-target="#editModal" data-title="编辑 PS5" data-backdrop="static">编辑</button>
+                        <button type="button" class="btn btn-secondary btn-secondary" >查看</button>
+                        <!--注意data-toggle="modal"data-target="#editModal"是从上面复制下来的-->
+                        <!--dropdowns--split button dropdowns下拉菜单-->
+                        <button type="button" class="btn btn-danger dropdown-toggle " data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false">其他
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">操作记录</a>
+                            <a class="dropdown-item" href="#">资料汇出</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#" data-toggle="modal"data-target="#removeModal"
+                                data-title="Delete">删除订单</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td style="font-weight: bold;">益禾烤奶</td>
+                <td >木子<span class="badger badge-pill badge-primary">老客户</span></td>
+                <td >muzi@gmail.com</td>
+                <td >已出货</td>
+                <td class="text-right">10</td>
+                <td class="text-center">
+                    <!--button group-basic example 按钮群-->
+                    <!--btn-group-sm调整按钮大小-->
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary btn-secondary" data-toggle="modal"
+                        data-target="#editModal" data-title="编辑 Switch" data-backdrop="static">编辑</button>
+                        <button type="button" class="btn btn-secondary btn-secondary" >查看</button>
+
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false"> </span>其他</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">操作记录</a>
+                            <a class="dropdown-item" href="#">资料汇出</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#" data-toggle="modal"data-target="#removeModal"
+                                data-title="Delete">删除订单</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr >
+                <th scope="row">3</th>
+                <td style="font-weight: bold;">芝士莓莓</td>
+                <td >荷包蛋<span class="badger badge-pill badge-primary">老客户</span></td>
+                <td >hebaodan@gmail.com</td>
+                <td >已出货</td>
+                <td class="text-right">32</td>
+                <td class="text-center">
+                    <!--button group-basic example 按钮群-->
+                    <!--btn-group-sm调整按钮大小-->
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary btn-secondary" data-toggle="modal"
+                        data-target="#editModal" data-title="编辑" data-backdrop="static">编辑</button>
+                        <button type="button" class="btn btn-secondary btn-secondary" >查看</button>
+                        <!--注意data-toggle="modal"data-target="#editModal"是从上面复制下来的-->
+                        <!--dropdowns--split button dropdowns下拉菜单-->
+                        <button type="button" class="btn btn-danger dropdown-toggle " data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false">其他
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">操作记录</a>
+                            <a class="dropdown-item" href="#">资料汇出</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#" data-toggle="modal"data-target="#removeModal"
+                                data-title="Delete">删除订单</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--使用pagination的分页原件-->
+    <nav aria-label="Page navigation example">
+        <!--置中可搜索说明文件justify content-->
+        <ul class="pagination justify-content-center">
+            <li class="page-item"> <a class="page-link" href="#" >Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+
+    <!--使用card的每日总订单数-->
+    <div class="card rounded-0 bg-light">
+        <div class="card-header">
+        </div>
+        <div class="card-body ">
+            <div class="d-flex">
+                <div class="form-inline">
+                    <!--components-forms的inline forms-->
+                    <div class="form-group">
+                        <label for="month" class="sr-only">月份</label>
+                        <!--sr-only荧幕阅览器才会看到-->
+                        <select name="" id="month" class="form-control form-control-sm">
+                            <option value="9">9月</option>  
+                            <option value="10">10月</option>  
+                            <option value="11">11月</option>  
+                            <option value="12">12月</option>  
+                        </select>
+                    </div>
+                </div>
+                <div class="ml-auto">
+                    <a href="#" class="btn btn-outline-secondary btn-sm">下载报表</a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">订单管理</a>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th width="100">日期</th>
+                        <th>订单数</th>
+                        <th>退货数</th>
+                        <th>出货数</th>
+                        <th width="15%">有问题货品</th>
+                        <th width="150" class="text-right">营业额</th>
+                        <th width="150" class="text-right">净利润</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">9/1</th>
+                        <td>300</td>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>3</td>
+                        <td class="text-right">4500</td><!--class="text-right"-->
+                        <td class="text-right">3000</td><!--class="text-right"-->
+                    </tr>
+                    <tr>
+                        <th scope="row">9/2</th>
+                        <td>300</td>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>3</td>
+                        <td class="text-right">4500</td><!--class="text-right"-->
+                        <td class="text-right">3000</td><!--class="text-right"-->
+                    </tr>
+                    <tr>
+                        <th scope="row">9/3</th>
+                        <td>300</td>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>3</td>
+                        <td class="text-right">4500</td><!--class="text-right"-->
+                        <td class="text-right">3000</td><!--class="text-right"-->
+                    <tr>
+                        <th scope="row">9/4</th>
+                        <td>300</td>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>3</td>
+                        <td class="text-right">4500</td><!--class="text-right"-->
+                        <td class="text-right">3000</td><!--class="text-right"-->
+                    </tr>
+                    <tr>
+                        <th scope="row">9/5</th>
+                        <td>300</td>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>3</td>
+                        <td class="text-right">4500</td><!--class="text-right"-->
+                        <td class="text-right">3000</td><!--class="text-right"-->
+                    </tr>
+                    <tr>
+                        <th scope="row">9/6</th>
+                        <td>300</td>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>3</td>
+                        <td class="text-right">4500</td><!--class="text-right"-->
+                        <td class="text-right">3000</td><!--class="text-right"-->
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6" class="text-right">月总营收</td>
+                        <!--colspan="6"合并6个栏位-->
+                        <td class="text-right">135,000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">月总净利</td>
+                        <!--colspan="6"合并6个栏位-->
+                        <td class="text-right">90,500</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <!--使用结尾-->
+    <footer class="mt-5 py-3 bg-light text-secondary text-center">
+        后台管理系统
+    </footer>
+    <!--使用footer的结尾-->
+    <footer class="py-3 bg-light">
+        <div class="d-flex">
+            <div class="ml-5">
+                <p>@ Copyright 2021 QM饮品</p>
+            </div>
+            <div class="ml-5">
+                <a href="#">GitHub</a>
+                <a href="#">Weibo</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </footer>
+    
+   
+
+    <!--去文字说明文件复制modal-live demo，exampModal要改成editModal-->
+    <!--使用Modal的编辑操作-->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLable">编辑信息</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--使用Modal的删除操作-->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--bg-danger text-white将删除按钮文字改变颜色-->
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLable">删除信息</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--登陆的modal-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--变更modal里面的颜色bg-primary 与文字颜色text-white-->
+                <div class="modal-header  text-balck">
+                    <h5 class="modal-title" id="exampleModalLabel">登入</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--登入内容-->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">信箱</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="exampleInputPassword1">密码</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+
+                        <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">记住密码</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <!--新增a连接modal，class=“mr-auto”调整位置-->
+                    <a href="#" class="mr-auto" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">切换到注册</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--注册的modal-->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--变更modal里面文字颜色text-white https://getbootstrap.com/docs/4.0/utilities/colors/-->
+                <div class="modal-header text-black">
+                    <h5 class="modal-title" id="exampleModalLabel">注册</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--登入内容-->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">信箱</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">密码</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">确认密码</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+    
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">记住密码</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!--新增a连接modal，class=“mr-auto”调整位置-->
+                    <a href="#" class="mr-auto" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">切换到登陆</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="js/all.js"></script>
+</body>
+
+</html>
